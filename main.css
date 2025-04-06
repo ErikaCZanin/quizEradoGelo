@@ -1,0 +1,114 @@
+body {
+    background: url("https://live.staticflickr.com/65535/54434249038_52b98053dc_o.jpg") no-repeat center
+      center fixed;
+    background-size: cover;
+    display:flex;
+    font-family: "Gabarito", sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .logo {
+    text-align: end;
+    margin-left: 350px;
+  }
+  
+  .logo img {
+    width: 30%;
+  }
+  
+  /* Caixa principal do jogo */
+  .conteudo-jogo {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 5px #ff1b7b;
+    margin: 30px;
+    padding: 20px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    min-width: 250px
+  }
+  
+  /* Títulos e textos */
+  h2,
+  p {
+    color: white;
+  }
+  
+  /* Estrutura do questionário */
+  .questionario {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  
+  /* Área de conteúdo */
+  .conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 20px;
+    width: 540px;
+  }
+  
+  /* Estilo da pergunta */
+  .pergunta {
+    font-weight: 600;
+    color: white;
+  }
+  
+  /* Progresso da pergunta */
+  .progresso {
+    text-align: end;
+    font-size: small;
+    font-weight: 500;
+    color: white;
+  }
+  
+  /* Área das respostas */
+  .respostas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* Botões de resposta */
+  .botao-resposta {
+    width: 100%;
+    height: 2.5rem;
+    text-align: start;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    background: #ff1b7b;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .botao-resposta:hover {
+    background: #19caca;
+    font-weight: 600;
+  }
+  
+  /* Tela de fim do jogo */
+  .fim {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .fim span {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+  }
+  
+  
