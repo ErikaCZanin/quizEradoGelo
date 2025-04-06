@@ -1,3 +1,10 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+
 body {
     background: url("https://live.staticflickr.com/65535/54434249038_52b98053dc_o.jpg") no-repeat center
       center fixed;
@@ -9,6 +16,7 @@ body {
     flex-direction: column;
   }
   
+
   .logo {
     text-align: end;
     margin-left: 350px;
@@ -19,20 +27,21 @@ body {
   }
   
   /* Caixa principal do jogo */
-  .conteudo-jogo {
+  .conteudojogo {
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px #ff1b7b;
-    margin: 30px;
-    padding: 20px;
-    height: 250px;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    min-width: 250px
+    transform: translateY(110px); 
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
   }
+
   
   /* Títulos e textos */
   h2,
