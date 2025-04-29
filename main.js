@@ -29,30 +29,30 @@ perguntas = [
         {
           opcao:
             "Seguir as pegadas cuidadosamente",
-          correto: false
+          correto: true
         },
         {
           opcao:
             "Escrever um bilhete na neve: “volta, bebê!”",
-          correto: true
+          correto: false
         }
       ]
     },
     {
-      pergunta: "Sid encontra pegadas na neve. O que ele deve fazer?",
+      pergunta: "Sid encontra uma mochila do bebê presa no gelo. E agora?",
       respostas: [
         {
-          opcao: "Ignorar e continuar gritando “bebêêêêêêê” por aí",
+          opcao: "Usa um galho pra quebrar o gelo com cuidado",
+          correto: true
+        },
+        {
+          opcao:
+            "Tenta lamber o gelo até derreter",
           correto: false
         },
         {
           opcao:
-            "Seguir as pegadas cuidadosamente",
-          correto: false
-        },
-        {
-          opcao:
-            "Escrever um bilhete na neve: “volta, bebê!”",
+            "Finge que nada aconteceu e vai embora”",
           correto: true
         }
       ]
@@ -66,6 +66,7 @@ perguntas = [
   const textoFinal = document.querySelector(".fim span");
   const conteudo = document.querySelector(".conteudo");
   const conteudoFinal = document.querySelector(".fim");
+  const btnRetornar = document.querySelector(".btnReiniciar");
   
   // PARTE 3: Variáveis para controle do jogo
   let indiceAtual = 0; // Índice da pergunta atual
@@ -117,6 +118,7 @@ perguntas = [
   // PARTE 5: Função para mostrar a tela final
   function finalizarJogo() {
     textoFinal.innerHTML = `Você acertou ${acertos} de ${perguntas.length}`; // Exibe o resultado
+    btnRetornar.innerHTML = `Clique para reiniciar`;
     conteudo.style.display = "none"; // Esconde as perguntas
     conteudoFinal.style.display = "flex"; // Mostra a tela final
     totalPerguntas = perguntas.length
@@ -131,4 +133,62 @@ perguntas = [
   }
   // PARTE 6: Iniciando o jogo pela primeira vez
   carregarPergunta();
+
+  document.querySelectorAll('.btnReiniciar').forEach(item => {
+    item.addEventListener('click', function () {
+      indiceAtual = 0; // Reinicia o índice
+      acertos = 0; // Zera os acertos
+  
+      conteudo.style.display = "flex"; // Mostra as perguntas
+      conteudoFinal.style.display = "none"; // Esconde o final
+  
+      carregarPergunta(); // Recomeça o quiz
+  
+      console.log("Reiniciado jogo");
+    });
+  });
+  
+
+  document.querySelectorAll('.btnList').forEach(item => {
+    item.addEventListener('click', function () {
+      const navBar = document.querySelector('.navbar');
+      const content = document.querySelector('.container');
+      const isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+      const body = document.querySelector('body');
+      const html = document.querySelector('html');
+  
+      content?.style.setProperty('transition', 'margin-top 0.5s ease');
+        body?.style.setProperty('transition', 'height 0.5s ease');
+        html?.style.setProperty('transition', 'height 0.5s ease');
+        item?.style.setProperty('transition', 'width 0.5s ease');
+  
+      if (navBar) {
+        if (navBar.style.height && navBar.style.height !== '0px') {
+          navBar.style.height = '0px';
+          item.style.width = '30%';
+          body.style.height = '100%';
+          html.style.height = '100%';
+  
+          // Remove a margem se for tela pequena
+          if (isSmallScreen && content) {
+            content.style.marginTop = '0px';
+          }
+        } else {
+          navBar.style.height = navBar.scrollHeight + 'px';
+  
+          // Ajusta a largura de acordo com o tamanho da tela
+          if (isSmallScreen) {
+            item.style.width = '60%';
+            content.style.marginTop = (navBar.scrollHeight + 90) + 'px';
+            body.style.height = '115%'; 
+            html.style.height = '115%';
+          } else {
+            item.style.width = '100%';
+          }
+        }
+      }
+    });
+  });
+  
+  
   
