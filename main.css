@@ -43,7 +43,7 @@ body {
   }
 
 
-  .jogo {
+  .container {
     background: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px #654143;
     border-radius: 8px;

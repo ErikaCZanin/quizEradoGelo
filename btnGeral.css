@@ -14,6 +14,7 @@ header {
         padding: 8px 0;
         margin: 40px 0 !important;
         right: 0 !important;
+        top: 30px !important;
     }
 
     .btnList {
@@ -24,7 +25,11 @@ header {
 
     }
 
-    .conteudo-jogo {
+    .respostas {
+        gap: 18px !important;
+    }
+
+    .conteudojogo {
         display: flex;
         flex-direction: column;
         min-height: 89vh !important;
@@ -32,6 +37,15 @@ header {
         justify-content: center;
         align-items: center;
         padding: 0 !important;
+        margin: 0 8px;
+    }
+
+    .botao-resposta {
+        height: auto !important;
+    }
+
+    .conteudo {
+        width: auto !important;
     }
 
 
@@ -76,6 +90,7 @@ header {
         left: 50% !important;
         transform: translateX(-50%);
         max-width: 210px !important;
+        margin-bottom: 8px;
       }
     
 
